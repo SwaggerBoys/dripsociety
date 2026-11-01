@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>دریپ کالچر | DRIP CULTURE</title>
+    <link rel="icon" type="image/png" href="logo.png">
+    <link rel="stylesheet" href="style.css">
+    <!-- فونت‌های مینیمال و مدرن -->
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Vazirmatn:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- نوار بالای سایت (Navbar) -->
+    <header class="navbar">
+        <div class="nav-container">
+            <!-- منوی سمت راست (در RTL) -->
+            <nav class="nav-links left-menu">
+                <a href="#shop">فروشگاه</a>
+                <a href="#collections">کالکشن‌ها</a>
+                <a href="#about">درباره ما</a>
+            </nav>
+
+            <!-- لوگو در مرکز -->
+            <a href="#" class="logo">
+                <img src="logo.png" alt="DRIP CULTURE" class="logo-img">
+            </a>
+
+            <!-- منوی سمت چپ (در RTL) -->
+            <nav class="nav-links right-menu">
+                <a href="#search">جستجو</a>
+                <a href="#account">حساب کاربری</a>
+                <a href="#bag">سبد خرید (۰)</a>
+            </nav>
+            
+            <button class="menu-toggle">☰</button>
+        </div>
+    </header>
+
+    <!-- بخش اصلی (Hero) -->
+    <section class="hero" id="hero">
+        <div class="hero-image-wrapper">
+            <img src="Header.png" alt="کالکشن جدید" class="hero-img">
+            <div class="hero-overlay"></div>
+        </div>
+        
+        <!-- تایپوگرافی غول‌پیکر روی عکس (مثل سایت Fear of God) -->
+        <div class="hero-typography">
+            <h2 class="text-top">NEW</h2>
+            <h1 class="text-main">COLLECTION</h1>
+            <a href="#shop" class="btn-discover">مشاهده کالکشن</a>
+        </div>
+
+        <div class="hero-footer">
+            <span>طراحی شده برای خیابان</span>
+            <span>DRIP CULTURE © 2024</span>
+        </div>
+    </section>
+
+    <!-- بخش معرفی / کالکشن (Asymmetric Layout) -->
+    <section class="editorial" id="about">
+        <div class="editorial-grid">
+            <div class="editorial-text">
+                <span class="subtitle">فلسفه ما</span>
+                <h2>فراتر از<br>پوشاک</h2>
+                <p>ما در دریپ کالچر به دنبال تعریف جدیدی از استایل خیابانی هستیم. مینیمالیسم، کیفیت بالا و طراحی‌های بی‌زمان. هر قطعه داستانی برای گفتن دارد.</p>
+                <a href="#shop" class="btn-outline">مشاهده محصولات</a>
+            </div>
+            <div class="editorial-image">
+                <img src="image.png" alt="کالکشن دریپ کالچر">
+            </div>
+        </div>
+    </section>
+
+    <!-- بخش محصولات ویژه (Featured) -->
+    <section class="featured-products" id="shop">
+        <div class="section-header">
+            <h2>منتخب‌های ویژه</h2>
+            <a href="#" class="view-all">مشاهده همه</a>
+        </div>
+        
+        <div class="product-grid">
+            <!-- محصول ۱ -->
+            <div class="product-card">
+                <div class="product-img-placeholder">
+                    <!-- از image.png به عنوان عکس موقت محصولات استفاده میکنیم -->
+                    <img src="image.png" alt="هودی اورسایز">
+                </div>
+                <div class="product-info">
+                    <h3>هودی اورسایز</h3>
+                    <p>۳,۲۰۰,۰۰۰ تومان</p>
+                </div>
+            </div>
+            <!-- محصول ۲ -->
+            <div class="product-card">
+                <div class="product-img-placeholder">
+                    <img src="image.png" alt="تیشرت کراپ">
+                </div>
+                <div class="product-info">
+                    <h3>تیشرت کراپ</h3>
+                    <p>۱,۸۰۰,۰۰۰ تومان</p>
+                </div>
+            </div>
+            <!-- محصول ۳ -->
+            <div class="product-card">
+                <div class="product-img-placeholder">
+                    <img src="image.png" alt="شلوار کارگو">
+                </div>
+                <div class="product-info">
+                    <h3>شلوار کارگو</h3>
+                    <p>۲,۵۰۰,۰۰۰ تومان</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- فوتر -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-brand">
+                <img src="logo.png" alt="لوگو" class="footer-logo">
+                <span>DRIP CULTURE</span>
+            </div>
+            <div class="footer-links">
+                <a href="#">اینستاگرام</a>
+                <a href="#">تلگرام</a>
+                <a href="#">شرایط و قوانین</a>
+            </div>
+            <p class="copyright">© ۲۰۲۴ تمامی حقوق محفوظ است.</p>
+        </div>
+    </footer>
+
+    <script>
+        // اسکریپت ساده برای منوی موبایل
+        const toggle = document.querySelector('.menu-toggle');
+        const leftMenu = document.querySelector('.left-menu');
+        const rightMenu = document.querySelector('.right-menu');
+        
+        toggle.addEventListener('click', () => {
+            leftMenu.classList.toggle('active');
+            rightMenu.classList.toggle('active');
+        });
+    </script>
+</body>
+</html>
