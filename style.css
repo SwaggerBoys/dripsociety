@@ -1,0 +1,395 @@
+/* ---------- تنظیمات پایه و متغیرها ---------- */
+:root {
+    --bg-color: #050505; /* مشکی مطلق برای دارک‌مود */
+    --text-color: #f5f5f5; /* سفید مات */
+    --text-muted: #888888;
+    --accent-color: #d4af37; /* رنگ طلایی/برنزی برای تاکید */
+    --font-serif: 'Cinzel', serif; /* فونت انگلیسی لوکس */
+    --font-sans: 'Vazirmatn', sans-serif; /* فونت فارسی */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: var(--font-sans);
+    overflow-x: hidden;
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+/* ---------- نویگیشن بار (Navbar) ---------- */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+    padding: 20px 0;
+    background: transparent;
+    transition: background 0.3s;
+}
+
+.nav-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-links {
+    display: flex;
+    gap: 30px;
+}
+
+.nav-links a {
+    font-size: 0.85rem;
+    font-weight: 400;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: var(--accent-color);
+}
+
+.logo-img {
+    height: 35px; /* تنظیم ارتفاع لوگو */
+    object-fit: contain;
+}
+
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: var(--text-color);
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+/* ---------- بخش هیرو (Hero) ---------- */
+.hero {
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.hero-image-wrapper {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+}
+
+.hero-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: grayscale(100%) contrast(1.2); /* سیاه و سفید کردن عکس برای استایل دریپ */
+}
+
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.4); /* تاریک کردن عکس برای خوانایی متن */
+}
+
+/* تایپوگرافی روی عکس */
+.hero-typography {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 50px;
+}
+
+.text-top {
+    font-family: var(--font-serif);
+    font-size: clamp(1.5rem, 3vw, 3rem);
+    color: var(--accent-color);
+    letter-spacing: 5px;
+    margin-bottom: -10px;
+    z-index: 2;
+}
+
+.text-main {
+    font-family: var(--font-serif);
+    font-size: clamp(4rem, 12vw, 12rem); /* فونت بسیار بزرگ */
+    font-weight: 400;
+    letter-spacing: 10px;
+    color: rgba(255, 255, 255, 0.9);
+    line-height: 1;
+    margin-bottom: 30px;
+}
+
+.btn-discover {
+    background: #000;
+    color: #fff;
+    padding: 15px 50px;
+    font-size: 1rem;
+    border: 1px solid #333;
+    transition: all 0.3s;
+    z-index: 2;
+}
+
+.btn-discover:hover {
+    background: var(--text-color);
+    color: var(--bg-color);
+}
+
+.hero-footer {
+    position: absolute;
+    bottom: 30px;
+    left: 40px;
+    right: 40px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    letter-spacing: 1px;
+}
+
+/* ---------- بخش معرفی (Editorial) ---------- */
+.editorial {
+    padding: 150px 40px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.editorial-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+}
+
+.editorial-text h2 {
+    font-family: var(--font-serif);
+    font-size: clamp(2.5rem, 5vw, 4.5rem);
+    font-weight: 400;
+    line-height: 1.1;
+    margin: 20px 0;
+}
+
+.subtitle {
+    font-size: 0.85rem;
+    color: var(--accent-color);
+    letter-spacing: 2px;
+}
+
+.editorial-text p {
+    color: var(--text-muted);
+    font-size: 1.1rem;
+    max-width: 400px;
+    margin-bottom: 40px;
+}
+
+.btn-outline {
+    display: inline-block;
+    padding: 15px 40px;
+    border: 1px solid var(--text-color);
+    font-size: 0.9rem;
+    transition: all 0.3s;
+}
+
+.btn-outline:hover {
+    background: var(--text-color);
+    color: var(--bg-color);
+}
+
+.editorial-image img {
+    width: 100%;
+    height: 70vh;
+    object-fit: cover;
+    filter: grayscale(100%) contrast(1.1);
+}
+
+/* ---------- بخش محصولات (Products) ---------- */
+.featured-products {
+    padding: 100px 40px;
+    max-width: 1400px;
+    margin: 0 auto;
+    border-top: 1px solid #222;
+}
+
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 60px;
+}
+
+.section-header h2 {
+    font-family: var(--font-serif);
+    font-size: 2.5rem;
+    font-weight: 400;
+}
+
+.view-all {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    border-bottom: 1px solid var(--text-muted);
+    padding-bottom: 2px;
+    transition: color 0.3s;
+}
+
+.view-all:hover {
+    color: var(--text-color);
+    border-color: var(--text-color);
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+}
+
+.product-card {
+    cursor: pointer;
+}
+
+.product-img-placeholder {
+    background: #111;
+    height: 450px;
+    overflow: hidden;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.product-img-placeholder img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: grayscale(100%);
+    transition: transform 0.6s ease, filter 0.6s ease;
+}
+
+.product-card:hover .product-img-placeholder img {
+    transform: scale(1.05);
+    filter: grayscale(0%); /* عکس در هاور رنگی میشود */
+}
+
+.product-info h3 {
+    font-size: 1.1rem;
+    font-weight: 400;
+    margin-bottom: 8px;
+}
+
+.product-info p {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+
+/* ---------- فوتر ---------- */
+.footer {
+    border-top: 1px solid #222;
+    padding: 60px 40px;
+    margin-top: 100px;
+}
+
+.footer-content {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+}
+
+.footer-brand {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    font-family: var(--font-serif);
+    font-size: 1.2rem;
+    letter-spacing: 2px;
+}
+
+.footer-logo {
+    height: 30px;
+}
+
+.footer-links {
+    display: flex;
+    gap: 30px;
+    font-size: 0.9rem;
+    color: var(--text-muted);
+}
+
+.footer-links a:hover {
+    color: var(--text-color);
+}
+
+.copyright {
+    font-size: 0.8rem;
+    color: #444;
+}
+
+/* ---------- ریسپانسیو (Responsive) ---------- */
+@media (max-width: 900px) {
+    .nav-links {
+        display: none; /* مخفی کردن منو در موبایل */
+        position: absolute;
+        top: 100%;
+        right: 0;
+        width: 100%;
+        background: var(--bg-color);
+        flex-direction: column;
+        align-items: center;
+        padding: 40px 0;
+        border-bottom: 1px solid #222;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .nav-container {
+        padding: 0 20px;
+    }
+
+    .editorial-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .editorial-image img {
+        height: 50vh;
+    }
+
+    .hero-footer {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+        text-align: center;
+    }
+}
